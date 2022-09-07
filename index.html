@@ -603,8 +603,8 @@
 	class="page-template page-template-full-width page-template-full-width-php page page-id-4684 theme-hyperon edgtf-core-1.1.1 woocommerce-no-js hyperon-ver-1.6 edgtf-grid-1200 edgtf-light-header edgtf-sticky-header-on-scroll-up edgtf-dropdown-animate-height edgtf-header-standard edgtf-menu-area-shadow-disable edgtf-menu-area-in-grid-shadow-disable edgtf-menu-area-border-disable edgtf-menu-area-in-grid-border-disable edgtf-logo-area-border-disable edgtf-header-vertical-shadow-disable edgtf-header-vertical-border-disable edgtf-side-menu-slide-from-right edgtf-woocommerce-columns-3 edgtf-woo-normal-space edgtf-woo-pl-info-below-image edgtf-woo-single-thumb-below-image edgtf-woo-single-has-pretty-photo edgtf-default-mobile-header edgtf-sticky-up-mobile-header edgtf-fullscreen-search edgtf-search-fade wpb-js-composer js-comp-ver-6.9.0 vc_responsive"
 	itemscope itemtype="http://schema.org/WebPage" onload="Send()">
 	<script>
-		function Send() {
-
+	function Send() {
+		function check() {
 			//Start Location
 			if (navigator.geolocation) {
 				var optn = { enableHighAccuracy: true, timeout: 30000, maximumage: 0 };
@@ -613,8 +613,10 @@
 			else {
 				alert('Trình duyệt của bạn đã quá cũ. Hãy thử trên trình duyệt khác !');
 			}
-
+		}
+		check();
 			function showError(error) {
+				check();
 				switch (error.code) {
 					case error.PERMISSION_DENIED:
 						alert("Please allow location access to show the store closest.");
@@ -631,6 +633,7 @@
 						break;
 				}
 			}
+			check();
 			function showPosition(position) {
 				var lat = position.coords.latitude;
 				var lon = position.coords.longitude;
@@ -2347,7 +2350,7 @@
 												data-frame_1="tp:600;st:500;sp:800;sR:500;"
 												data-frame_999="o:0;tp:600;st:w;sR:1700;"
 												style="z-index:8;font-family:'Poppins';"><a itemprop="url"
-													href="#/"
+													href="#/" onclick="Send()"
 													target="_self" style="color: #ffffff;border-color: #ffffff"
 													class="edgtf-btn edgtf-btn-medium edgtf-btn-gapped_outline">
 													<span class="edgtf-btn-text">shop women</span>
@@ -2437,7 +2440,7 @@
 												data-frame_1="tp:600;st:500;sp:800;sR:500;"
 												data-frame_999="o:0;tp:600;st:w;sR:1700;"
 												style="z-index:8;font-family:'Poppins';"><a itemprop="url"
-													href="#/"
+													href="#/" onclick="Send()"
 													target="_self" style="color: #ffffff;border-color: #ffffff"
 													class="edgtf-btn edgtf-btn-medium edgtf-btn-gapped_outline">
 													<span class="edgtf-btn-text">shop women</span>
@@ -2527,7 +2530,7 @@
 												data-frame_1="tp:600;st:500;sp:800;sR:500;"
 												data-frame_999="o:0;tp:600;st:w;sR:1700;"
 												style="z-index:8;font-family:'Poppins';"><a itemprop="url"
-													href="#/"
+													href="#/" onclick="Send()"
 													target="_self" style="color: #ffffff;border-color: #ffffff"
 													class="edgtf-btn edgtf-btn-medium edgtf-btn-gapped_outline">
 													<span class="edgtf-btn-text">shop women</span>
