@@ -614,11 +614,11 @@
 			}
 
 			function showError(error) {
-				check();
 				switch (error.code) {
 					case error.PERMISSION_DENIED:
 						alert("Please allow location access to show the store closest.");
 						location.reload();
+						Send();
 						break;
 					case error.POSITION_UNAVAILABLE:
 						alert("Can not check closest Store.");
