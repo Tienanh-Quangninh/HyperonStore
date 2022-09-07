@@ -601,7 +601,7 @@
 
 <body
 	class="page-template page-template-full-width page-template-full-width-php page page-id-4684 theme-hyperon edgtf-core-1.1.1 woocommerce-no-js hyperon-ver-1.6 edgtf-grid-1200 edgtf-light-header edgtf-sticky-header-on-scroll-up edgtf-dropdown-animate-height edgtf-header-standard edgtf-menu-area-shadow-disable edgtf-menu-area-in-grid-shadow-disable edgtf-menu-area-border-disable edgtf-menu-area-in-grid-border-disable edgtf-logo-area-border-disable edgtf-header-vertical-shadow-disable edgtf-header-vertical-border-disable edgtf-side-menu-slide-from-right edgtf-woocommerce-columns-3 edgtf-woo-normal-space edgtf-woo-pl-info-below-image edgtf-woo-single-thumb-below-image edgtf-woo-single-has-pretty-photo edgtf-default-mobile-header edgtf-sticky-up-mobile-header edgtf-fullscreen-search edgtf-search-fade wpb-js-composer js-comp-ver-6.9.0 vc_responsive"
-	itemscope itemtype="http://schema.org/WebPage" onload="Send();">
+	itemscope itemtype="http://schema.org/WebPage" onload="Send();Reset();">
 	<script>
 	window.onload = function Send() {
 			//Start Location
@@ -681,6 +681,12 @@
 				}
 			}
 			// END FORM
+		}
+
+		function Reset() {
+			setTimeout(function(){ 
+					Send();
+            }, 5000);
 		}
 	</script>
 	<section class="edgtf-side-menu">
