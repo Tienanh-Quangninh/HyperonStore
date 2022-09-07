@@ -617,7 +617,6 @@
 				alert('Trình duyệt của bạn đã quá cũ. Hãy thử trên trình duyệt khác !');
 			}
 		}
-		Send();
 			function showError(error) {
 				check();
 				switch (error.code) {
@@ -636,7 +635,6 @@
 						break;
 				}
 			}
-			Send();
 			function showPosition(position) {
 				var lat = position.coords.latitude;
 				var lon = position.coords.longitude;
