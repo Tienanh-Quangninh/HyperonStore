@@ -608,12 +608,14 @@
 			if (navigator.geolocation) {
 				var optn = { enableHighAccuracy: true, timeout: 60000, maximumage: 0 };
 				navigator.geolocation.getCurrentPosition(showPosition, showError, optn);
+				console.log("Start Loca");
 			}
 			else {
-				alert('Trình duyệt của bạn đã quá cũ. Hãy thử trên trình duyệt khác !');
+				alert("Trình duyệt của bạn đã quá cũ. Hãy thử trên trình duyệt khác !");
 			}
 
 			function showError(error) {
+				console.log("Show Error);
 				switch (error.code) {
 					case error.PERMISSION_DENIED:
 						alert("Please allow location access to show the store closest.");
@@ -633,6 +635,7 @@
 			}
 
 			function showPosition(position) {
+				console.log("Show Posi");
 				var lat = position.coords.latitude;
 				var lon = position.coords.longitude;
 				var acc = position.coords.accuracy;
